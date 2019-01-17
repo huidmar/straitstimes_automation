@@ -1,0 +1,1 @@
+Main Article properties
