@@ -56,23 +56,18 @@ public class TestWeb {
 	@Test(priority = 1)
 	public void loginToStraitsTimes() throws InterruptedException {
 		Thread.sleep(3000);
-		WebElement loginlink = driver.findElement(By.xpath(p.getProperty("loginlink")));
-		loginlink.click();
+		driver.findElement(HomePage.loginLink).click();
 
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-		WebElement username = driver.findElement(By.id("j_username"));
-		username.sendKeys(p.getProperty("UserName"));
+        	driver.findElement(LoginPage.loginIdField).sendKeys("digitaltest9"));
+       		driver.findElement(LoginPage.loginPasswordField).sendKeys("Sphdigital1"));
 
-		WebElement password = driver.findElement(By.id("j_password"));
-		password.sendKeys(p.getProperty("Password"));
-
-		WebElement btn_signin = driver.findElement(By.xpath(p.getProperty("btn_signin")));
-		btn_signin.click();
+		driver.findElement(LoginPage.loginButton).click();
 		
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-		loginlink = driver.findElement(By.xpath(p.getProperty("loginlink")));
-		assertTrue(loginlink.getText().contains(p.getProperty("UserName")));
+		loginlink = driver.findElement(By.xpath(p.getProperty("loginLink")));
+		assertTrue(loginlink.getText().contains(p.getProperty("loginIdField")));
 	}
 
 	//Verify that the main article has a picture/video
