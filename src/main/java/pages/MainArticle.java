@@ -2,7 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 
-public class straitstimesMainArticlePage {
+public class MainArticle {
     public static By mainPageImage =
             By.xpath("//picture[@class='img-responsive']");
 
