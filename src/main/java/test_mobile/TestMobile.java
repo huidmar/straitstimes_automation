@@ -47,14 +47,14 @@ public class AppiumDriverTest {
         
     @And("User enters username and password")
     public void userEntersUsernamePassword() {
-        driver.findElement(By.xpath("//*[@id='usernameTextField']")).sendKeys("digitaltest10");
+        driver.findElement(By.xpath("//*[@id='usernameTextField']")).sendKeys("digitaltest9");
         driver.hideKeyboard();
         driver.findElement(By.xpath("//*[@id='passwordTextField']")).sendKeys("Sphdigital1");
         driver.hideKeyboard();
         driver.findElement(By.xpath("//*[@id='Continue']")).click();
         }
         
-     @Then("Verify user logged in successfully")
+     @And("Verify user logged in successfully")
      public void verifyUserLoggedInSuccessfully() {
         try {
         	Thread.sleep(2000);
@@ -70,18 +70,12 @@ public class AppiumDriverTest {
         }
     }
     
-      @When("User taps on the latest tab and first article")
+      @Then("Verify user is able to click on the latest tab and first article")
       public void userTapsLatestTabAndFirstArticle() {
         driver.findElement(By.xpath("//*[@id='Latest']")).click();
         driver.findElement(By.xpath("//*[@id='FirstArticle']")).click();
         }
        
-    }
-
-    @After
-    public void tearDown() {
-        driver.quit();
-
     }
 
 }
