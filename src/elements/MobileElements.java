@@ -1,1 +1,0 @@
-Mobile Elements functions
