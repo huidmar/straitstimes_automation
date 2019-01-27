@@ -1,1 +1,0 @@
-Web Manager functions
